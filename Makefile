@@ -6,7 +6,7 @@
 #    By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/26 11:54:46 by vrudyka           #+#    #+#              #
-#    Updated: 2018/11/12 18:50:51 by vrudyka          ###   ########.fr        #
+#    Updated: 2018/11/16 11:53:36 by vrudyka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ CBJ = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 	  ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c\
 	  ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c\
 	  ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
-	  ft_tolower.c ft_toupper.c ft_abs.c ft_lstadd.c ft_lstdel.c\
+	  ft_tolower.c ft_toupper.c ft_lstadd.c ft_lstdel.c\
 	  ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c
+
+INCL = includes
 
 OBJ = $(CBJ:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
-
-INCL = libft.h
 
 all: $(NAME)
 
@@ -37,7 +37,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c $(OBJ)
-	gcc $(FLAGS) -I $(INCL) -o $@ -c $<
+	gcc -I$(INCL) $(FLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJ)

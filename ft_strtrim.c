@@ -6,7 +6,7 @@
 /*   By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 14:52:37 by vrudyka           #+#    #+#             */
-/*   Updated: 2018/11/09 18:16:07 by vrudyka          ###   ########.fr       */
+/*   Updated: 2018/11/15 16:38:19 by vrudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char		*ft_strtrim(char const *s)
 		return (if_empty());
 	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
 		len--;
-	if (!(res = (char*)malloc(sizeof(char) * (len - i + 1))))
+	if (!(res = ft_memalloc(len - i + 1)))
 		return (NULL);
 	return (ft_fill(s, i, len, res));
 }

@@ -6,7 +6,7 @@
 /*   By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 13:36:30 by vrudyka           #+#    #+#             */
-/*   Updated: 2018/11/06 15:53:08 by vrudyka          ###   ########.fr       */
+/*   Updated: 2018/11/18 17:26:17 by vrudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s == NULL)
 		return (NULL);
 	len = ft_strlen(s) + 1;
-	if (!(res = (char*)malloc(sizeof(char) * len)))
+	if (!(res = ft_memalloc(len)))
 		return (NULL);
 	while (i < (len - 1))
 	{

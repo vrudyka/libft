@@ -6,7 +6,7 @@
 /*   By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/29 11:39:14 by vrudyka           #+#    #+#             */
-/*   Updated: 2018/11/12 12:39:56 by vrudyka          ###   ########.fr       */
+/*   Updated: 2018/11/18 18:13:21 by vrudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,18 @@ static size_t	ft_intlen(int n)
 	return (i);
 }
 
+static int		ft_abs(int n)
+{
+	return (n < 0 ? -n : n);
+}
+
 char			*ft_itoa(int n)
 {
 	size_t		len;
 	char		*res;
 
 	len = ft_intlen(n) - 1;
-	if (((res = ft_strnew(len + 1)) != NULL))
+	if (((res = ft_memalloc(len + 2)) != NULL))
 	{
 		if (n < 0)
 			res[0] = '-';
