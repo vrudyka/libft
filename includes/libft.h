@@ -6,7 +6,7 @@
 /*   By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/26 11:01:25 by vrudyka           #+#    #+#             */
-/*   Updated: 2018/11/16 19:36:48 by vrudyka          ###   ########.fr       */
+/*   Updated: 2018/12/12 15:18:55 by vrudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd_head(t_list **alst, t_list *new);
+void				ft_lstadd_end(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
