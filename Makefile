@@ -23,20 +23,22 @@ CBJ = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 	  ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c\
 	  ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c\
 	  ft_tolower.c ft_toupper.c ft_lstadd_head.c ft_lstadd_end.c ft_lstdel.c\
-	  ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c
+	  ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c get_next_line.c\
+	  ft_swap.c split_count.c split_free.c ft_atof.c ft_atoi_base.c\
+	  ft_fswap.c
 
 INCL = includes
 
 OBJ = $(CBJ:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -g -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 
-%.o: %.c $(OBJ)
+%.o: %.c
 	@gcc -I$(INCL) $(FLAGS) -o $@ -c $<
 
 clean:

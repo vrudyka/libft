@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_fswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 11:35:32 by vrudyka           #+#    #+#             */
-/*   Updated: 2018/11/09 16:36:24 by vrudyka          ###   ########.fr       */
+/*   Created: 2019/07/18 13:45:19 by vrudyka           #+#    #+#             */
+/*   Updated: 2019/07/18 13:45:21 by vrudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putnbr(int n)
+void	ft_fswap(float *a, float *b)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else if (n < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-n);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + '0');
-	}
-	else
-		ft_putchar(n + '0');
+	float		c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }

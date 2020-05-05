@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   split_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrudyka <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/26 11:35:32 by vrudyka           #+#    #+#             */
-/*   Updated: 2018/11/09 16:36:24 by vrudyka          ###   ########.fr       */
+/*   Created: 2019/02/19 12:18:13 by vrudyka           #+#    #+#             */
+/*   Updated: 2019/02/19 12:18:15 by vrudyka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void		split_free(char **split)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else if (n < 0)
+	int		i;
+
+	i = 0;
+	while (split[i])
 	{
-		ft_putchar('-');
-		ft_putnbr(-n);
+		free(split[i]);
+		i++;
 	}
-	else if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + '0');
-	}
-	else
-		ft_putchar(n + '0');
+	free(split);
 }
